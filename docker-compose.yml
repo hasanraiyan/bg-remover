@@ -1,0 +1,10 @@
+services:
+  background-removal-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MAX_FILE_SIZE_MB=10
+      - REMBG_MODEL=u2net
+      # - API_KEY=your_optional_secret_key
+    restart: unless-stopped
